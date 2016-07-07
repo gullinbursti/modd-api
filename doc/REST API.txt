@@ -1,0 +1,43 @@
+
+URL                                    METHOD      OPERATION
+
+/api/users                             POST        Adds a new MODD user account
+/api/users/:id                         GET         Returns MODD user with id of :id
+/api/users/:id                         DELETE      Deletes MODD user with id of :id
+/api/users/:id                         PUT         Updates MODD user with id of :id
+
+/api/users/:id/im_account              GET         Returns IM accounts for user with id of :id
+/api/users/:id/im_account              POST        Adds and IM service account for user with id of :id
+/api/users/:id/im_account              DELETE      Deletes an IM service for user with id of :id
+
+
+/api/users/:id/follow                  GET         Returns players, teams, games user :id follows
+/api/users/:id/follow/:fid             POST        Sets user with :id to follow followable entity :fid
+/api/users/:id/follow/:fid             DELETE      Unfollows user :id from followable entity :fid
+
+/api/users/:id/follow/:fid/action/     GET         Returns actions of followable :fid that user :id subscribes to
+/api/users/:id/follow/:fid/action/:aid POST        Subscribes user :id to action :aid of followable :fid
+/api/users/:id/follow/:fid/action/:aid DELETE      Unsubscribes user :id from action aid: of followable :fid
+
+
+PRIVATE
+
+/api/games                             POST        Adds a new game, game network, or game device to system
+/api/games/:id                         GET         Returns a game, network, or device with id of :id
+/api/games/:id                         DELETE      Deletes a game, network, or device with id of :id
+/api/games/:id                         PUT         Updates a game, network, or device with id of :id
+
+/api/actions                           POST        Creates action that can happen for a followable entity
+/api/actions/:id                       DELETE      Deletes action :id and removes it from any followees and users
+
+/api/followables                       POST        Creates a new player, game or team that can be followed
+/api/followables/:id                   GET         Returns followable entity with id of :id
+/api/followables/:id                   PUT         Updates followable entity with id of :id
+/api/followables/:id                   DELETE      Deletes followable entity with id of :id
+
+
+/api/followables/:id/actions           GET         Returns actions users can follow on followable entity
+/api/followables/:id/actions/:aid      POST        Adds subscribable action :aid to followable :id
+/api/followables/:id/actions/:aid      DELETE      Removes action :aid from followable :id, deletes any subscriptions
+
+
