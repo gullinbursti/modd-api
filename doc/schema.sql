@@ -92,16 +92,3 @@ CREATE TABLE action_subscriptions (
 )
 
 
-
-
-
-
-
-
-
-CREATE TABLE (
-  id UNSIGNED INT NOT NULL AUTO_INCREMENT,
-
-  created DATETIME,
-  updated TIMESTAMP
-)
